@@ -18,8 +18,8 @@ public class FibonacciTest extends TestCase {
 		fib = new Fibonacci();
 	}
 	
-	@Test
-	public void testFibonacciNumber() {
+	@Test()
+	public void testFibonacciNumber() throws InterruptedException {
 		int i = fib.fibonacciNumber(5);
 		assertNotNull(i);
 		assertEquals(8, i);
