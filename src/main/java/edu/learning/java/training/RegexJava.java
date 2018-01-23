@@ -2,6 +2,8 @@ package edu.learning.java.training;
 
 import java.util.Scanner;
 
+import edu.learning.java.exception.InvalidException;
+
 
 public class RegexJava {
 
@@ -15,8 +17,11 @@ public class RegexJava {
 		System.out.println(" bool " + bool);
 	}
 
-	private boolean validatPhone(String nextLine) {
-		boolean retvalue;
+	public boolean validatPhone(String nextLine) {
+		System.out.println("nextLine.length() " + nextLine.length());
+		if(nextLine.length()<10){
+			throw new InvalidException("Please number of including area code : in total 10");
+		}
 		//validate phone numbers of format "1234567890"
 		if(nextLine.matches("\\d{10}"))
 			return true;
@@ -27,7 +32,7 @@ public class RegexJava {
 		else if(nextLine.matches("\\d{3}-\\d{3}-\\d{4}\\s(x|(ext))\\d{3,5}"))
 			return true;
 		//validating phone number where area code is in braces ()
-		else if(nextLine.matches("\\(\\d{3}\\)-\\d{3}-\\d{4}"))
+		else if(nextLine.matches("\\(\\d{3}\\)-\\d{3}-\\d{4}")||nextLine.matches("\\(\\d{3}\\)\\d{3}\\d{4}"))
 			return true;
 		
 		return false;	
