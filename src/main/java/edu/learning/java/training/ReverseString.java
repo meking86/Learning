@@ -8,11 +8,11 @@ public class ReverseString {
 		
 	}
 	
-	public String reverStringMethod(String s){
+	public StringBuffer reverStringMethod(String s){
 		int i = s.length()-1;
-		String returnString = "" ;
+		StringBuffer returnString = new StringBuffer() ;
 		while(i>=0){
-			returnString = returnString + s.charAt(i);
+			returnString.append(s.charAt(i))   ;
 			i--;
 		}
 		
