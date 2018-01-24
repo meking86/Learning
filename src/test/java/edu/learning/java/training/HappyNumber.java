@@ -22,14 +22,17 @@ public class HappyNumber {
 		//System.out.println("Everytime i change " + nextInt);
 		int add = 0;
 		while(tmp!=0){
+			
 			//System.out.println(" (tmp%10) " + (tmp%10));
 			add += (tmp%10)*(tmp%10);
-			//System.out.println("add  " + add );
+			
 			tmp = tmp/10;
 		}
-		
-		if(add/10!=0)
+		System.out.println("add  " + add );
+		if(add/10!=0){
+			
 			validateHappy(add);
+		}
 		
 		if(add==1)
 		return "I am a Happy Number";
